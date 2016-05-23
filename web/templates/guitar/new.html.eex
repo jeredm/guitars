@@ -1,0 +1,6 @@
+<h2>New guitar</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: guitar_path(@conn, :create) %>
+
+<%= link "Back", to: guitar_path(@conn, :index) %>

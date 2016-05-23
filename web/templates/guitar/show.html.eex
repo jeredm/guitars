@@ -1,0 +1,33 @@
+<h2>Show guitar</h2>
+
+<ul>
+
+  <li>
+    <strong>Manufacturer:</strong>
+    <%= @guitar.manufacturer %>
+  </li>
+
+  <li>
+    <strong>Color:</strong>
+    <%= @guitar.color %>
+  </li>
+
+  <li>
+    <strong>Model:</strong>
+    <%= @guitar.model %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @guitar.year %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @guitar.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: guitar_path(@conn, :edit, @guitar) %>
+<%= link "Back", to: guitar_path(@conn, :index) %>
