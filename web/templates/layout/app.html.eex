@@ -7,29 +7,61 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Guitars!</title>
+    <title>Guitar Wish List!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,100,300' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+  <body class="Site">
+    <header>
+        <div class="col-xs-6">
+            <div class="circle">
+                <br />
+                Guitar
+                <br />
+                Wish
+                <br />
+                List!
+            </div>
+        </div>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <div class="col-xs-6 text-right">
+            <div id="header-links">
+                <a href="<%= guitar_path(@conn, :new) %>">Make A Wish</a>
+            </div>
+        </div>
+    </header>
 
-      <main role="main">
+    <hr class="clear col-xs-12"/>
+
+    <div class="col-xs-10 col-xs-offset-1 page-content">
+        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+    </div>
+    <main class="Site-content">
         <%= render @view_module, @view_template, assigns %>
-      </main>
-
-    </div> <!-- /container -->
+    </main>
+    <footer>
+        <div class="col-xs-1">
+            <a href="<%= page_path(@conn, :index) %>">
+                Home
+            </a>
+        </div>
+        <div class="col-xs-5">
+            <a href="<%= guitar_path(@conn, :index) %>">
+                List
+            </a>
+        </div>
+        <div class="col-xs-6 text-right">
+            <a href="http://elixir-lang.org">
+                <img src="/images/elixir_logo.png"/>
+            </a>
+            <a href="http://www.phoenixframework.org/">
+                <img src="/images/phoenix_logo.png" />
+            </a>
+        </div>
+    </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
+
 </html>

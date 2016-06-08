@@ -1,34 +1,39 @@
-<h2>Listing guitars</h2>
+<div class="page-content col-xs-10 col-xs-offset-1">
+    <h2>Wish List of Amazing Guitars!</h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Manufacturer</th>
-      <th>Color</th>
-      <th>Model</th>
-      <th>Year</th>
-      <th>Description</th>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Manufacturer</th>
+                <th>Color</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Description</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <%= for guitar <- @guitars do %>
+            <tr>
+                <td><%= guitar.manufacturer %></td>
+                <td><%= guitar.color %></td>
+                <td><%= guitar.model %></td>
+                <td><%= guitar.year %></td>
+                <td><%= guitar.description %></td>
+                <td class="text-right">
+                    <%= link "Show", to: guitar_path(@conn, :show, guitar), class: "btn btn-danger" %>
+                </td>
+                <td class="text-right">
+                    <%= link "Edit", to: guitar_path(@conn, :edit, guitar), class: "btn btn-danger" %>
+                </td>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for guitar <- @guitars do %>
-    <tr>
-      <td><%= guitar.manufacturer %></td>
-      <td><%= guitar.color %></td>
-      <td><%= guitar.model %></td>
-      <td><%= guitar.year %></td>
-      <td><%= guitar.description %></td>
-
-      <td class="text-right">
-        <%= link "Show", to: guitar_path(@conn, :show, guitar), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: guitar_path(@conn, :edit, guitar), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: guitar_path(@conn, :delete, guitar), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<%= link "New guitar", to: guitar_path(@conn, :new) %>
+                <td class="text-right">
+                    <%= link "Delete", to: guitar_path(@conn, :delete, guitar), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" %>
+                </td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>

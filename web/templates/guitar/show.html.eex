@@ -1,33 +1,36 @@
-<h2>Show guitar</h2>
+<div class="col-xs-10 col-xs-offset-1 page-content">
 
-<ul>
+    <h2>
+        <span>Guitar No. <%= @guitar.id %></span>
+    </h2>
+    <ul>
 
-  <li>
-    <strong>Manufacturer:</strong>
-    <%= @guitar.manufacturer %>
-  </li>
+    <li>
+        <strong>Manufacturer:</strong>
+        <%= @guitar.manufacturer %>
+    </li>
 
-  <li>
-    <strong>Color:</strong>
-    <%= @guitar.color %>
-  </li>
+    <li>
+        <strong>Color:</strong>
+        <%= @guitar.color %>
+    </li>
 
-  <li>
-    <strong>Model:</strong>
-    <%= @guitar.model %>
-  </li>
+    <li>
+        <strong>Model:</strong>
+        <%= @guitar.model %>
+    </li>
 
-  <li>
-    <strong>Year:</strong>
-    <%= @guitar.year %>
-  </li>
+    <li>
+        <strong>Year:</strong>
+        <%= @guitar.year %>
+    </li>
 
-  <li>
-    <strong>Description:</strong>
-    <%= @guitar.description %>
-  </li>
+    <li>
+        <strong>Description:</strong>
+        <%= @guitar.description %>
+    </li>
 
-</ul>
+    </ul>
 
-<%= link "Edit", to: guitar_path(@conn, :edit, @guitar) %>
-<%= link "Back", to: guitar_path(@conn, :index) %>
+    <%= link "Edit", to: guitar_path(@conn, :edit, @guitar), class: "btn btn-primary" %>
+</div>

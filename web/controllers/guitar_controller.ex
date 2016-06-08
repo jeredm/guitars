@@ -47,7 +47,7 @@ defmodule Guitars.GuitarController do
       {:ok, guitar} ->
         conn
         |> put_flash(:info, "Guitar updated successfully.")
-        |> redirect(to: guitar_path(conn, :show, guitar))
+        |> redirect(to: guitar_path(conn, :index))
       {:error, changeset} ->
         render(conn, "edit.html", guitar: guitar, changeset: changeset)
     end

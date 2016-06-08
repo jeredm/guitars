@@ -1,6 +1,6 @@
-<h2>Edit guitar</h2>
+<div class="col-xs-10 col-xs-offset-1 page-content">
+    <h2>Edit guitar</h2>
 
-<%= render "form.html", changeset: @changeset,
-                        action: guitar_path(@conn, :update, @guitar) %>
-
-<%= link "Back", to: guitar_path(@conn, :index) %>
+    <%= render "form.html", changeset: @changeset,
+                            action: guitar_path(@conn, :update, @guitar) %>
+</div>

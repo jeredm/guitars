@@ -7,7 +7,7 @@ defmodule Guitars.GuitarControllerTest do
 
   test "lists all entries on index", %{conn: conn} do
     conn = get conn, guitar_path(conn, :index)
-    assert html_response(conn, 200) =~ "Listing guitars"
+    assert html_response(conn, 200) =~ "Wish List of Amazing Guitars!"
   end
 
   test "renders form for new resources", %{conn: conn} do
@@ -29,7 +29,7 @@ defmodule Guitars.GuitarControllerTest do
   test "shows chosen resource", %{conn: conn} do
     guitar = Repo.insert! %Guitar{}
     conn = get conn, guitar_path(conn, :show, guitar)
-    assert html_response(conn, 200) =~ "Show guitar"
+    assert html_response(conn, 200) =~ "Guitar No."
   end
 
   test "renders page not found when id is nonexistent", %{conn: conn} do
@@ -47,7 +47,7 @@ defmodule Guitars.GuitarControllerTest do
   test "updates chosen resource and redirects when data is valid", %{conn: conn} do
     guitar = Repo.insert! %Guitar{}
     conn = put conn, guitar_path(conn, :update, guitar), guitar: @valid_attrs
-    assert redirected_to(conn) == guitar_path(conn, :show, guitar)
+    assert redirected_to(conn) == guitar_path(conn, :index)
     assert Repo.get_by(Guitar, @valid_attrs)
   end
 
