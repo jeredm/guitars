@@ -1,4 +1,5 @@
 # Guitars
+This is a wish list for guitars! It uses a PostgreSQL database, so you will need to set it up. https://www.postgresql.org/
 
 To start your Phoenix app:
 
